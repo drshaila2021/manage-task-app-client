@@ -8,7 +8,9 @@ const Completed = () => {
     isLoading,
     refetch,
   } = useQuery(["tasksQuery"], () =>
-    fetch(`http://localhost:5000/addtask`).then((res) => res.json())
+    fetch(`https://young-peak-50927.herokuapp.com/addtask`).then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {

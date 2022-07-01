@@ -8,7 +8,6 @@ const ToDoList = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     console.log(task);
   };
 
@@ -17,7 +16,9 @@ const ToDoList = () => {
     isLoading,
     refetch,
   } = useQuery(["tasksQuery"], () =>
-    fetch(`http://localhost:5000/addtask`).then((res) => res.json())
+    fetch(`https://young-peak-50927.herokuapp.com/addtask`).then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {
@@ -30,7 +31,7 @@ const ToDoList = () => {
 
   const handleTaskCompleted = (e, taskId) => {
     console.log(taskId);
-    const url = `http://localhost:5000/${taskId}`;
+    const url = `https://young-peak-50927.herokuapp.com/${taskId}`;
 
     fetch(url, {
       method: "PATCH",

@@ -8,7 +8,7 @@ const AddTask = () => {
 
     console.log(task);
 
-    fetch("http://localhost:5000/addtask", {
+    fetch("https://young-peak-50927.herokuapp.com/addtask", {
       method: "POST",
       headers: {
         "content-type": "application/json",
